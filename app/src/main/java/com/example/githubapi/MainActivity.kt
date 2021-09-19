@@ -11,5 +11,19 @@ class MainActivity : BaseActivity<MainViewModel>() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        viewModel.getUsers()
+    }
+
+    override fun subscribeObservers() {
+        super.subscribeObservers()
+        subscribeToGetUsers()
+    }
+
+    /***** Subscribe methods implementation *****/
+
+    private fun subscribeToGetUsers() {
+        viewModel.getUsers.observe(this) {
+
+        }
     }
 }
