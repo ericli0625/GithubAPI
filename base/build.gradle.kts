@@ -37,4 +37,9 @@ dependencies {
     testImplementation(Dependencies.Testing.JUNIT)
     androidTestImplementation(Dependencies.Testing.EXT_JUNIT)
     androidTestImplementation(Dependencies.Testing.ESPRESSO_CORE)
+
+    api(Dependencies.Koin.KOIN_CORE)
+    api(Dependencies.Koin.KOIN_CORE_EXT)
+    api(Dependencies.Koin.KOIN_ANDROIDX_VIEW_MODEL)
+    api(Dependencies.Koin.KOIN_ANDROIDX_EXT)
 }
