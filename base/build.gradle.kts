@@ -42,4 +42,15 @@ dependencies {
     api(Dependencies.Koin.KOIN_CORE_EXT)
     api(Dependencies.Koin.KOIN_ANDROIDX_VIEW_MODEL)
     api(Dependencies.Koin.KOIN_ANDROIDX_EXT)
+
+    implementation(Dependencies.GSON)
+
+    implementation(Dependencies.Retrofit.LOGGING_INTERCEPTOR)
+    implementation(Dependencies.Retrofit.ADAPTER_RXJAVA2)
+    api(Dependencies.Retrofit.RETROFIT)
+    implementation(Dependencies.Retrofit.CONVERTER_GSON)
+
+    api(Dependencies.Rxjava.RXJAVA)
+    api(Dependencies.Rxjava.RXANDROID)
+    api(Dependencies.Rxjava.RXKOTLIN)
 }

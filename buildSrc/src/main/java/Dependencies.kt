@@ -13,6 +13,17 @@ object Versions {
 
     const val KOIN = "2.0.1"
 
+    const val GSON = "2.8.8"
+
+    const val LOGGING_INTERCEPTOR = "4.9.0"
+    const val ADAPTER_RXJAVA2 = "2.4.0"
+    const val RETROFIT = "2.9.0"
+    const val CONVERTER_GSON = "2.9.0"
+
+    const val RXJAVA = "2.2.10"
+    const val RXANDROID = "2.1.1"
+    const val RXKOTLIN = "2.3.0"
+
     object Android {
         const val COMPILE_SDK = 30
         const val TARGET_SDK = 30
@@ -47,5 +58,20 @@ object Dependencies {
         const val KOIN_CORE_EXT = "org.koin:koin-core-ext:${Versions.KOIN}"
         const val KOIN_ANDROIDX_VIEW_MODEL = "org.koin:koin-androidx-viewmodel:${Versions.KOIN}"
         const val KOIN_ANDROIDX_EXT = "org.koin:koin-androidx-ext:${Versions.KOIN}"
+    }
+
+    const val GSON = "com.google.code.gson:gson:${Versions.GSON}"
+
+    object Retrofit {
+        const val LOGGING_INTERCEPTOR = "com.squareup.okhttp3:logging-interceptor:${Versions.LOGGING_INTERCEPTOR}"
+        const val ADAPTER_RXJAVA2 = "com.squareup.retrofit2:adapter-rxjava2:${Versions.ADAPTER_RXJAVA2}"
+        const val RETROFIT = "com.squareup.retrofit2:retrofit:${Versions.RETROFIT}"
+        const val CONVERTER_GSON = "com.squareup.retrofit2:converter-gson:${Versions.CONVERTER_GSON}"
+    }
+
+    object Rxjava {
+        const val RXJAVA = "io.reactivex.rxjava2:rxjava:${Versions.RXJAVA}"
+        const val RXANDROID = "io.reactivex.rxjava2:rxandroid:${Versions.RXANDROID}"
+        const val RXKOTLIN = "io.reactivex.rxjava2:rxkotlin:${Versions.RXKOTLIN}"
     }
 }
