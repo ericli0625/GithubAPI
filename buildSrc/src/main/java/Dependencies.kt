@@ -11,6 +11,8 @@ object Versions {
     const val EXT_JUNIT = "1.1.2"
     const val ESPRESSO = "3.3.0"
 
+    const val KOIN = "2.0.1"
+
     object Android {
         const val COMPILE_SDK = 30
         const val TARGET_SDK = 30
@@ -38,5 +40,12 @@ object Dependencies {
         const val JUNIT = "junit:junit:${Versions.JUNIT}"
         const val EXT_JUNIT = "androidx.test.ext:junit:${Versions.EXT_JUNIT}"
         const val ESPRESSO_CORE = "androidx.test.espresso:espresso-core:${Versions.ESPRESSO}"
+    }
+
+    object Koin {
+        const val KOIN_CORE = "org.koin:koin-core:${Versions.KOIN}"
+        const val KOIN_CORE_EXT = "org.koin:koin-core-ext:${Versions.KOIN}"
+        const val KOIN_ANDROIDX_VIEW_MODEL = "org.koin:koin-androidx-viewmodel:${Versions.KOIN}"
+        const val KOIN_ANDROIDX_EXT = "org.koin:koin-androidx-ext:${Versions.KOIN}"
     }
 }
