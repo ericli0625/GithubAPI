@@ -4,7 +4,6 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.example.base.BaseViewModel
 import com.example.base.model.UserInfo
-import com.example.base.network.ErrorHandler
 import io.reactivex.android.schedulers.AndroidSchedulers
 
 class MainViewModel(private val repository: MainRepository) : BaseViewModel(repository) {
@@ -20,11 +19,11 @@ class MainViewModel(private val repository: MainRepository) : BaseViewModel(repo
                             if (it.isSuccessful) {
                                 _getUsers.value = it.body()
                             } else {
-                                ErrorHandler.handle(it.code())
+                                showErrorSnackBar(it.code())
                             }
                         },
                         {
-                            ErrorHandler.handle(it)
+                            showErrorSnackBar(it)
                         }
                 )
     }
