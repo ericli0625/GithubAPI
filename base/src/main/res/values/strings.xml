@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="type_error_not_modified">沒有任何改變</string>
+    <string name="type_error_service_unavailable">服務暫停</string>
+    <string name="type_error_validation_failed">驗證失敗</string>
+    <string name="type_error_socket_timeout_exception">網路連線逾時</string>
+    <string name="type_error_io_exception">網路連線失敗，請檢查網路</string>
+    <string name="type_error_common">系統異常稍後再試</string>
+</resources>

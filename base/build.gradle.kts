@@ -26,15 +26,34 @@ android {
 }
 
 dependencies {
-    implementation(Dependencies.Kotlin.KOTLIN_STDLIB)
+    api(Dependencies.Kotlin.KOTLIN_STDLIB)
 
     implementation(Dependencies.AndroidX.CORE_KTX)
     implementation(Dependencies.AndroidX.APPCOMPAT)
-    implementation(Dependencies.AndroidX.CONSTRAINT_LAYOUT)
+    api(Dependencies.AndroidX.VIEW_BINDING)
 
-    implementation(Dependencies.GOOGLE.MATERIAL)
+    api(Dependencies.GOOGLE.MATERIAL)
 
     testImplementation(Dependencies.Testing.JUNIT)
     androidTestImplementation(Dependencies.Testing.EXT_JUNIT)
     androidTestImplementation(Dependencies.Testing.ESPRESSO_CORE)
+
+    implementation(Dependencies.Koin.KOIN_CORE)
+    implementation(Dependencies.Koin.KOIN_CORE_EXT)
+    api(Dependencies.Koin.KOIN_ANDROIDX_VIEW_MODEL)
+    api(Dependencies.Koin.KOIN_ANDROIDX_EXT)
+
+    implementation(Dependencies.GSON)
+
+    implementation(Dependencies.Retrofit.LOGGING_INTERCEPTOR)
+    implementation(Dependencies.Retrofit.ADAPTER_RXJAVA2)
+    api(Dependencies.Retrofit.RETROFIT)
+    implementation(Dependencies.Retrofit.CONVERTER_GSON)
+
+    api(Dependencies.Rxjava.RXJAVA)
+    api(Dependencies.Rxjava.RXANDROID)
+    api(Dependencies.Rxjava.RXKOTLIN)
+
+    api(Dependencies.Fresco.FRESCO)
+    api(Dependencies.Fresco.IMAGE_PIPELINE_OKHTTP)
 }
