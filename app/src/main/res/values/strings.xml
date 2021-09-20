@@ -2,4 +2,6 @@
     <string name="app_name">GithubAPI</string>
     <string name="search_hint">請輸入使用者名稱</string>
     <string name="content_description_end_icon">清除</string>
+    <string name="retry">Retry</string>
+    <string name="banner">https://cdn.neow.in/news/images/uploaded/2021/04/1619644762_github-desktop_story.jpg</string>
 </resources>

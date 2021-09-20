@@ -19,18 +19,15 @@ abstract class BaseViewModel(private val repository: BaseRepository) : ViewModel
         super.onCleared()
     }
 
-    fun <T> Observable<T>.subscribeWithAutoDispose(
-            onNext: (T) -> Unit,
-            onError: (Throwable) -> Unit = {}
-    ) {
-        subscribe(onNext, onError).let(disposables::add)
+    fun <T> Observable<T>.subscribeWithAutoDispose(onNext: (T) -> Unit) {
+        subscribe(onNext).let(disposables::add)
     }
 
     fun showErrorSnackBar(code: Int) {
-        _showErrorSnackBar.value = ErrorHandler.handle(code)
+        _showErrorSnackBar.postValue(ErrorHandler.handle(code))
     }
 
     fun showErrorSnackBar(t: Throwable) {
-        _showErrorSnackBar.value = ErrorHandler.handle(t)
+        _showErrorSnackBar.postValue(ErrorHandler.handle(t))
     }
 }

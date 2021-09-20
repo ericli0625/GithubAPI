@@ -1,7 +1,7 @@
 package com.example.base.network.api
 
 import com.example.base.model.UserInfo
-import io.reactivex.Observable
+import io.reactivex.Single
 import retrofit2.Response
 
 class NetworkApi(private val api: Api) : Api {
@@ -17,12 +17,10 @@ class NetworkApi(private val api: Api) : Api {
 
     override fun getUsers(
             query: String,
-            sort: String,
-            order: String,
             perPage: Int,
             page: Int
-    ): Observable<Response<UserInfo>> {
-        return api.getUsers(query, sort, order, perPage, page)
+    ): Single<Response<UserInfo>> {
+        return api.getUsers(query, perPage, page)
     }
 
 }
