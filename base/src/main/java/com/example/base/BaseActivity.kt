@@ -2,19 +2,18 @@ package com.example.base
 
 import android.os.Bundle
 import androidx.annotation.CallSuper
-import androidx.annotation.LayoutRes
 import androidx.appcompat.app.AppCompatActivity
+import androidx.viewbinding.ViewBinding
 import com.google.android.material.snackbar.Snackbar
 
-abstract class BaseActivity<V : BaseViewModel> : AppCompatActivity() {
+abstract class BaseActivity<B : ViewBinding, V : BaseViewModel> : AppCompatActivity() {
 
-    @get:LayoutRes
-    protected abstract val layoutRes: Int
+    protected abstract val binding: B
     protected abstract val viewModel: V
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(layoutRes)
+        setContentView(binding.root)
         subscribeObservers()
     }
 

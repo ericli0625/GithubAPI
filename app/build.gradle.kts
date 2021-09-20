@@ -20,7 +20,7 @@ android {
     }
 
     buildTypes {
-        getByName("release")  {
+        getByName("release") {
             isMinifyEnabled = false
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
         }
@@ -32,18 +32,15 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+    buildFeatures {
+        viewBinding = true
+    }
 }
 
 dependencies {
     implementation(project(":base"))
 
-    implementation(Dependencies.Kotlin.KOTLIN_STDLIB)
-
-    implementation(Dependencies.AndroidX.CORE_KTX)
-    implementation(Dependencies.AndroidX.APPCOMPAT)
     implementation(Dependencies.AndroidX.CONSTRAINT_LAYOUT)
-
-    implementation(Dependencies.GOOGLE.MATERIAL)
 
     testImplementation(Dependencies.Testing.JUNIT)
     androidTestImplementation(Dependencies.Testing.EXT_JUNIT)

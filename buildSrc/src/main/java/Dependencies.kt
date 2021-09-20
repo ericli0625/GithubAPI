@@ -6,6 +6,7 @@ object Versions {
     const val CORE_KTX = "1.3.0"
     const val APPCOMPAT = "1.3.0-alpha02"
     const val CONSTRAINT_LAYOUT = "2.1.0"
+    const val VIEW_BINDING = "7.0.2"
 
     const val JUNIT = "4.12"
     const val EXT_JUNIT = "1.1.2"
@@ -24,6 +25,9 @@ object Versions {
     const val RXANDROID = "2.1.1"
     const val RXKOTLIN = "2.3.0"
 
+    const val FRESCO = "2.3.0"
+    const val IMAGE_PIPELINE_OKHTTP = "2.3.0"
+
     object Android {
         const val COMPILE_SDK = 30
         const val TARGET_SDK = 30
@@ -41,6 +45,7 @@ object Dependencies {
         const val CORE_KTX = "androidx.core:core-ktx:${Versions.CORE_KTX}"
         const val APPCOMPAT = "androidx.appcompat:appcompat:${Versions.APPCOMPAT}"
         const val CONSTRAINT_LAYOUT = "androidx.constraintlayout:constraintlayout:${Versions.CONSTRAINT_LAYOUT}"
+        const val VIEW_BINDING = "androidx.databinding:viewbinding:${Versions.VIEW_BINDING}"
     }
 
     object GOOGLE {
@@ -73,5 +78,10 @@ object Dependencies {
         const val RXJAVA = "io.reactivex.rxjava2:rxjava:${Versions.RXJAVA}"
         const val RXANDROID = "io.reactivex.rxjava2:rxandroid:${Versions.RXANDROID}"
         const val RXKOTLIN = "io.reactivex.rxjava2:rxkotlin:${Versions.RXKOTLIN}"
+    }
+
+    object Fresco {
+        const val FRESCO = "com.facebook.fresco:fresco:${Versions.FRESCO}"
+        const val IMAGE_PIPELINE_OKHTTP = "com.facebook.fresco:imagepipeline-okhttp3:${Versions.IMAGE_PIPELINE_OKHTTP}"
     }
 }
