@@ -3,10 +3,13 @@ package com.example.githubapi.main
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
+import android.view.View
 import android.view.inputmethod.EditorInfo
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.DividerItemDecoration
 import com.example.base.BaseActivity
+import com.example.base.extension.hide
+import com.example.base.extension.showOrHide
 import com.example.githubapi.R
 import com.example.githubapi.databinding.ActivityMainBinding
 import com.example.githubapi.util.PagingLoadStateAdapter
@@ -80,6 +83,7 @@ class MainActivity : BaseActivity<ActivityMainBinding, MainViewModel>() {
     private fun subscribeToGetUsers() {
         viewModel.getUsers.observe(this) {
             userAdapter.submitData(lifecycle, it)
+            binding.imageEmpty.hide()
         }
     }
 }
