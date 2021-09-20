@@ -11,8 +11,8 @@ class MainViewModel(private val repository: MainRepository) : BaseViewModel(repo
     private val _getUsers by lazy { MutableLiveData<UserInfo>() }
     val getUsers: LiveData<UserInfo> by lazy { _getUsers }
 
-    fun getUsers() {
-        repository.getUsers("App")
+    fun getUsers(query: String) {
+        repository.getUsers(query)
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribeWithAutoDispose(
                         {

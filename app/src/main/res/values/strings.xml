@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">GithubAPI</string>
+    <string name="search_hint">請輸入使用者名稱</string>
+    <string name="content_description_end_icon">清除</string>
 </resources>
