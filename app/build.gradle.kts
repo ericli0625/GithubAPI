@@ -45,4 +45,7 @@ dependencies {
     testImplementation(Dependencies.Testing.JUNIT)
     androidTestImplementation(Dependencies.Testing.EXT_JUNIT)
     androidTestImplementation(Dependencies.Testing.ESPRESSO_CORE)
+
+    implementation("androidx.paging:paging-runtime-ktx:3.0.1")
+    implementation("androidx.paging:paging-rxjava2-ktx:3.0.1")
 }

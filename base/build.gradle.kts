@@ -28,7 +28,7 @@ android {
 dependencies {
     api(Dependencies.Kotlin.KOTLIN_STDLIB)
 
-    implementation(Dependencies.AndroidX.CORE_KTX)
+    api(Dependencies.AndroidX.CORE_KTX)
     implementation(Dependencies.AndroidX.APPCOMPAT)
     api(Dependencies.AndroidX.VIEW_BINDING)
 

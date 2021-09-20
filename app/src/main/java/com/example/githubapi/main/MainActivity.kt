@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.DividerItemDecoration
 import com.example.base.BaseActivity
 import com.example.githubapi.R
 import com.example.githubapi.databinding.ActivityMainBinding
+import com.example.githubapi.util.PagingLoadStateAdapter
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class MainActivity : BaseActivity<ActivityMainBinding, MainViewModel>() {
@@ -30,8 +31,14 @@ class MainActivity : BaseActivity<ActivityMainBinding, MainViewModel>() {
 
     private fun initView() {
         with(binding) {
+            with(userAdapter) {
+                recyclerView.adapter = withLoadStateHeaderAndFooter(
+                        header = PagingLoadStateAdapter(this),
+                        footer = PagingLoadStateAdapter(this)
+                )
+            }
+
             recyclerView.apply {
-                adapter = userAdapter
                 addItemDecoration(
                         DividerItemDecoration(context, DividerItemDecoration.VERTICAL).apply {
                             ContextCompat.getDrawable(context, R.drawable.line_divider_middle)
@@ -72,7 +79,7 @@ class MainActivity : BaseActivity<ActivityMainBinding, MainViewModel>() {
 
     private fun subscribeToGetUsers() {
         viewModel.getUsers.observe(this) {
-            userAdapter.updateData(it.items)
+            userAdapter.submitData(lifecycle, it)
         }
     }
 }
