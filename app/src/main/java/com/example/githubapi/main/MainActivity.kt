@@ -1,11 +1,13 @@
-package com.example.githubapi
+package com.example.githubapi.main
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.view.inputmethod.EditorInfo
-import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.DividerItemDecoration
 import com.example.base.BaseActivity
+import com.example.githubapi.R
 import com.example.githubapi.databinding.ActivityMainBinding
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
@@ -14,7 +16,7 @@ class MainActivity : BaseActivity<ActivityMainBinding, MainViewModel>() {
     override val binding: ActivityMainBinding by lazy { ActivityMainBinding.inflate(layoutInflater) }
     override val viewModel: MainViewModel by viewModel()
 
-    private val userAdapter by lazy { UserAdapter() }
+    private val userAdapter by lazy { UserAdapter(::onCardClickedListener) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -56,6 +58,14 @@ class MainActivity : BaseActivity<ActivityMainBinding, MainViewModel>() {
 
     private fun performSearch(query: String) {
         viewModel.getUsers(query)
+    }
+
+    private fun onCardClickedListener(url: String) {
+        Intent().apply {
+            action = Intent.ACTION_VIEW
+            addCategory(Intent.CATEGORY_BROWSABLE)
+            data = Uri.parse(url)
+        }.let(::startActivity)
     }
 
     /***** Subscribe methods implementation *****/
