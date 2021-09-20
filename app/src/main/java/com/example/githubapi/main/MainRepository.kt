@@ -1,4 +1,4 @@
-package com.example.githubapi
+package com.example.githubapi.main
 
 import com.example.base.BaseRepository
 import com.example.base.model.UserInfo
