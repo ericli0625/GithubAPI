@@ -4,7 +4,7 @@ import com.example.base.model.UserInfo
 import com.example.base.network.Config.BASE_API_URL
 import com.example.base.network.retrofit.RetrofitClient
 import com.example.base.network.service.GithubService
-import io.reactivex.Observable
+import io.reactivex.Single
 import io.reactivex.schedulers.Schedulers
 import retrofit2.Response
 import retrofit2.Retrofit
@@ -25,11 +25,9 @@ class RetrofitApi : Api {
 
     override fun getUsers(
             query: String,
-            sort: String,
-            order: String,
             perPage: Int,
             page: Int
-    ): Observable<Response<UserInfo>> {
-        return getHubService.getUsers(query, sort, order, perPage, page)
+    ): Single<Response<UserInfo>> {
+        return getHubService.getUsers(query, perPage, page)
     }
 }

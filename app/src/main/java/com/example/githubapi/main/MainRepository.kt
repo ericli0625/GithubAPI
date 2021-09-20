@@ -1,19 +1,37 @@
 package com.example.githubapi.main
 
+import androidx.paging.Pager
+import androidx.paging.PagingConfig
+import androidx.paging.PagingData
+import androidx.paging.rxjava2.observable
 import com.example.base.BaseRepository
-import com.example.base.model.UserInfo
+import com.example.base.model.UserItem
+import com.example.githubapi.paging.UserPagingSource
 import io.reactivex.Observable
-import retrofit2.Response
 
 class MainRepository : BaseRepository() {
 
     fun getUsers(
-            query: String = "",
-            sort: String = "",
-            order: String = "desc",
-            perPage: Int = 30,
-            page: Int = 1
-    ): Observable<Response<UserInfo>> {
-        return networkApi.getUsers(query, sort, order, perPage, page)
+            query: String,
+            onShowErrorMessageListener: (Int) -> Unit,
+            onShowThrowableMessageListener: (Throwable) -> Unit,
+            perPage: Int = 30
+    ): Observable<PagingData<UserItem>> {
+        return Pager(
+                config = PagingConfig(
+                        pageSize = perPage,
+                        enablePlaceholders = true,
+                        prefetchDistance = 10
+                ),
+                pagingSourceFactory = {
+                    UserPagingSource(
+                            networkApi,
+                            query,
+                            perPage,
+                            onShowErrorMessageListener,
+                            onShowThrowableMessageListener
+                    )
+                }
+        ).observable
     }
 }
