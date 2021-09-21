@@ -43,7 +43,7 @@ dependencies {
     api(Dependencies.Koin.KOIN_ANDROIDX_VIEW_MODEL)
     api(Dependencies.Koin.KOIN_ANDROIDX_EXT)
 
-    implementation(Dependencies.GSON)
+    api(Dependencies.GSON)
 
     implementation(Dependencies.Retrofit.LOGGING_INTERCEPTOR)
     implementation(Dependencies.Retrofit.ADAPTER_RXJAVA2)
@@ -53,7 +53,4 @@ dependencies {
     api(Dependencies.Rxjava.RXJAVA)
     api(Dependencies.Rxjava.RXANDROID)
     api(Dependencies.Rxjava.RXKOTLIN)
-
-    api(Dependencies.Fresco.FRESCO)
-    api(Dependencies.Fresco.IMAGE_PIPELINE_OKHTTP)
 }

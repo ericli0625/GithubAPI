@@ -46,6 +46,14 @@ dependencies {
     androidTestImplementation(Dependencies.Testing.EXT_JUNIT)
     androidTestImplementation(Dependencies.Testing.ESPRESSO_CORE)
 
-    implementation("androidx.paging:paging-runtime-ktx:3.0.1")
-    implementation("androidx.paging:paging-rxjava2-ktx:3.0.1")
+    implementation(Dependencies.Fresco.FRESCO)
+    implementation(Dependencies.Fresco.IMAGE_PIPELINE_OKHTTP)
+
+    implementation(Dependencies.Paging.RUNTIME_KTX)
+    implementation(Dependencies.Paging.RXJAVA2_KTX)
+
+    testImplementation(Dependencies.Testing.CORE_TESTING)
+
+    testImplementation(Dependencies.Mockk.MOCKK)
+    androidTestImplementation(Dependencies.Mockk.MOCKK_ANDROID)
 }
