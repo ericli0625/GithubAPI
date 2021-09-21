@@ -22,4 +22,8 @@ data class UserItem(
         @SerializedName("subscriptions_url") val subscriptionsUrl: String,
         @SerializedName("type") val type: String,
         @SerializedName("url") val url: String
-)
+) {
+    companion object {
+        val defaultInstance = UserItem("", "", "", "", "", "", "", 0, "", "", "", "", "", 0, false, "", "", "", "")
+    }
+}

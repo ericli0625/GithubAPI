@@ -1,15 +1,14 @@
 package com.example.githubapi.paging
 
-import android.util.Log
 import androidx.paging.PagingState
 import androidx.paging.rxjava2.RxPagingSource
 import com.example.base.model.UserInfo
 import com.example.base.model.UserItem
-import com.example.base.network.api.NetworkApi
+import com.example.base.network.api.Api
 import io.reactivex.Single
 
 class UserPagingSource(
-        private val networkApi: NetworkApi,
+        private val networkApi: Api,
         private val query: String,
         private val perPage: Int,
         private val onShowErrorMessageListener: (Int) -> Unit,
@@ -29,7 +28,6 @@ class UserPagingSource(
                     it.body()
                 }
                 .map {
-                    Log.e("eric", " UserPagingSource, loadSingle position = $position")
                     toLoadResult(it, position)
                 }
                 .onErrorReturn {

@@ -11,6 +11,7 @@ object Versions {
     const val JUNIT = "4.12"
     const val EXT_JUNIT = "1.1.2"
     const val ESPRESSO = "3.3.0"
+    const val CORE_TESTING = "2.1.0"
 
     const val KOIN = "2.0.1"
 
@@ -27,6 +28,10 @@ object Versions {
 
     const val FRESCO = "2.3.0"
     const val IMAGE_PIPELINE_OKHTTP = "2.3.0"
+
+    const val MOCKK = "1.12.0"
+
+    const val PAGING = "3.0.1"
 
     object Android {
         const val COMPILE_SDK = 30
@@ -56,6 +61,7 @@ object Dependencies {
         const val JUNIT = "junit:junit:${Versions.JUNIT}"
         const val EXT_JUNIT = "androidx.test.ext:junit:${Versions.EXT_JUNIT}"
         const val ESPRESSO_CORE = "androidx.test.espresso:espresso-core:${Versions.ESPRESSO}"
+        const val CORE_TESTING = "androidx.arch.core:core-testing:${Versions.CORE_TESTING}"
     }
 
     object Koin {
@@ -83,5 +89,15 @@ object Dependencies {
     object Fresco {
         const val FRESCO = "com.facebook.fresco:fresco:${Versions.FRESCO}"
         const val IMAGE_PIPELINE_OKHTTP = "com.facebook.fresco:imagepipeline-okhttp3:${Versions.IMAGE_PIPELINE_OKHTTP}"
+    }
+
+    object Paging {
+        const val RUNTIME_KTX = "androidx.paging:paging-runtime-ktx:${Versions.PAGING}"
+        const val RXJAVA2_KTX = "androidx.paging:paging-rxjava2-ktx:${Versions.PAGING}"
+    }
+
+    object Mockk {
+        const val MOCKK = "io.mockk:mockk:${Versions.MOCKK}"
+        const val MOCKK_ANDROID = "io.mockk:mockk-android:${Versions.MOCKK}"
     }
 }
